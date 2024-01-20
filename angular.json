@@ -20,14 +20,14 @@
             },
             "root": "",
             "sourceRoot": "src",
-            "prefix": "mx",
+            "prefix": "xm",
             "architect": {
                 "build": {
-                    "builder": "@angular-devkit/build-angular:application",
+                    "builder": "@angular-devkit/build-angular:browser",
                     "options": {
                         "outputPath": "dist/xm",
                         "index": "src/index.html",
-                        "browser": "src/main.ts",
+                        "main": "src/main.ts",
                         "polyfills": [
                             "zone.js"
                         ],
@@ -62,7 +62,7 @@
                                     "maximumWarning": "2kb",
                                     "maximumError": "4kb"
                                 }
-                            ],
+                            ]
                         },
                         "development": {
                             "buildOptimizer": false,
@@ -76,13 +76,17 @@
                     "defaultConfiguration": "production"
                 },
                 "serve": {
+                    "options": {
+                        "browserTarget": "xm:build",
+                        "open": true
+                    },
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "configurations": {
                         "production": {
-                            "buildTarget": "xm:build:production"
+                            "browserTarget": "xm:build:production"
                         },
                         "development": {
-                            "buildTarget": "xm:build:development"
+                            "browserTarget": "xm:build:development"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -90,7 +94,7 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "buildTarget": "xm:build"
+                        "browserTarget": "xm:build"
                     }
                 },
                 "test": {
