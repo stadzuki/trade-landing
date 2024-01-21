@@ -1,0 +1,197 @@
+@import "assets/styles/colors";
+@import "assets/styles/mixins";
+@import "assets/styles/vars";
+
+.main {
+    position: relative;
+    height: 617px;
+    background-color: $bg-color-page;
+    background-image: linear-gradient(180deg, rgba(32, 46, 71, 0.65) 36.53%, rgba(32, 46, 71, 0.6175) 57.69%, rgba(32, 46, 71, 0.585) 78.84%, rgba(32, 46, 71, 0) 100%);
+    background-blend-mode: multiply;
+
+    &__bg-img {
+        z-index: 0;
+        position: absolute;
+        opacity: 0.3;
+        width: 100%;
+        height: 100%;
+        background: url("~assets/img/main-background.png") no-repeat center top;
+        background-size: contain;
+    }
+
+    &__content {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.content {
+    text-align: center;
+    color: $text-color-white;
+    line-height: 22px;
+    font-size: 14px;
+    font-weight: 400;
+    padding-top: 128px;
+
+    &__text-block {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        &__label {
+            text-transform: uppercase;
+            color: $text-color-light-gray;
+            @include xm-text(16px, $default-font-weight, $default-font-family, 40px, 1px);
+        }
+
+        &__main {
+            @include xm-text(35px, $font-weight-regular, $default-font-family, 42px);
+            max-width: 621px;
+
+            & > strong {
+                @include xm-text(35px, $font-weight-bold, $default-font-family, 42px);
+            }
+        }
+
+        &__description {
+            @include xm-text(16px, $font-weight-regular, $default-font-family, 24px);
+            max-width: 485px;
+            margin-top: 30px;
+
+            & > strong {
+                @include xm-text(16px, $font-weight-bold, $default-font-family, 24px);
+            }
+        }
+    }
+
+    &__bottom-block {
+        margin-top: 30px;
+    }
+}
+
+.bottom-description {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    & > &__demo {
+        @include xm-text(14px, $font-weight-regular, $default-font-family, 14px);
+    }
+
+    & > &__terms {
+        @include xm-text(12px, $font-weight-regular, $default-font-family, 14px);
+        margin-top: 15px;
+
+        & > a {
+            text-decoration: none;
+        }
+    }
+}
+
+.text {
+    &__highlight {
+        &--red {
+            color: $text-color-red;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .main {
+        height: 500px;
+
+        &__bg-img {
+            background: url("~assets/img/main-background-tablet.png") no-repeat center top;
+            background-size: cover;
+        }
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .content {
+        padding-top: 100px;
+
+        &__text-block {
+            &__main {
+                @include xm-text(28px, $font-weight-regular, $default-font-family, 35px);
+                max-width: 500px;
+
+                & > strong {
+                    @include xm-text(28px, $font-weight-bold, $default-font-family, 35px);
+                }
+            }
+
+            &__description {
+                @include xm-text(14px, $font-weight-regular, $default-font-family, 22px);
+                max-width: 403px;
+                margin-top: 25px;
+
+                & > strong {
+                    @include xm-text(14px, $font-weight-bold, $default-font-family, 22px);
+                }
+            }
+        }
+
+        &__bottom-block {
+            margin-top: 25px;
+        }
+    }
+
+    .bottom-description {
+        margin-top: 25px;
+    }
+}
+
+@media screen and (max-width: 565px) {
+    .main {
+        height: 615px;
+
+        &__bg-img {
+            background: url("~assets/img/main-background-mobile.png") no-repeat center top;
+            background-size: 26em;
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .content {
+        padding-top: 83px;
+
+        &__text-block {
+            &__main {
+                @include xm-text(28px, $font-weight-regular, $default-font-family, 38px);
+                max-width: 260px;
+
+                & > strong {
+                    @include xm-text(28px, $font-weight-bold, $default-font-family, 38px);
+                }
+            }
+
+            &__description {
+                @include xm-text(14px, $font-weight-regular, $default-font-family, 22px);
+                max-width: 245px;
+                margin-top: 20px;
+
+                & > strong {
+                    @include xm-text(14px, $font-weight-bold, $default-font-family, 22px);
+                }
+            }
+        }
+
+        &__bottom-block {
+            margin-top: 30px;
+        }
+    }
+
+    .bottom-description {
+        margin-top: 15px;
+
+        & > &__terms {
+            width: 244px;
+            @include xm-text(12px, $font-weight-regular, $default-font-family, 18px);
+        }
+    }
+}
