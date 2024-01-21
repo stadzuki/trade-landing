@@ -1,12 +1,17 @@
 @import "assets/styles/bootstrap.scss";
+@import "assets/styles/colors.scss";
 @import "assets/fonts/bebas-neue-pro/bebas-neue-pro.scss";
 @import "assets/fonts/roboto/roboto.scss";
+@import "assets/styles/crypto-icons.scss";
+
+* {
+    box-sizing: border-box;
+}
 
 body {
-    background: #201D27;
+    background: $bg-color-page;
     width: 100%;
     height: 100%;
-    overflow: hidden;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 14px;
@@ -22,5 +27,5 @@ ul {
 }
 
 a {
-    color: #fff;
+    color: $text-color-white;
 }
