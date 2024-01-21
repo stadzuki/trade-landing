@@ -1,0 +1,77 @@
+@import "assets/styles/colors";
+@import "assets/styles/mixins";
+
+.crypto-badge {
+    padding: 14px 13px 17px;
+    width: 204px;
+    height: 150px;
+    border-radius: 13.071px;
+    border: 0.871px solid rgba(167, 167, 167, 0.20);
+    background: rgba(140, 140, 140, 0.10);
+    color: $text-color-white;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+        padding-bottom: 23px;
+
+        &__logo {
+            width: 33px;
+            height: 33px;
+        }
+
+        &__symbol {
+            @include xm-text(13px, $font-weight-medium, $default-font-family, 16px);
+            text-shadow: 0px 0px 60.125px #FFC255;
+            margin-left: 12px;
+            margin-right: 12px;
+        }
+
+        &__name {
+            @include xm-text(9px, $font-weight-medium, $default-font-family, 10px);
+            text-transform: uppercase;
+            text-shadow: 0px 0px 60.125px #FFC255;
+            border-radius: 3.816px;
+            background: $bg-crypto-name;
+            color: $text-color-black;
+            padding: 2px 6px 3px;
+        }
+    }
+
+    &__statistic {
+        margin-top: 13px;
+        display: flex;
+        flex-direction: column;
+
+        &__amount {
+            color: $text-color-white;
+            text-shadow: 0px 0px 65.82px #FFC255;
+            @include xm-text(19px, $font-weight-bold, $default-font-family, 23px);
+        }
+    }
+}
+
+.percent-block {
+    margin-top: 9px;
+    display: flex;
+    align-items: center;
+
+    &__indication {
+        margin-right: 4px;
+        height: 11px;
+    }
+
+    &__value {
+        text-shadow: 0px 0px 65.82px #FFC255;
+        @include xm-text(13px, $font-weight-regular, $default-font-family, normal);
+
+        &--growth {
+            color: $text-color-growth-indication;
+        }
+
+        &--fall {
+            color: $text-color-fall-indication;
+        }
+    }
+}

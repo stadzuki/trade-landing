@@ -1,0 +1,20 @@
+<div class="crypto-badge" *ngIf="cryptoBadge">
+    <div class="crypto-badge__header">
+        <div class="crypto-badge__header__logo"
+             [class]="cryptoBadge?.icon"></div>
+        <p class="crypto-badge__header__symbol">{{ cryptoBadge?.symbol }}</p>
+        <p class="crypto-badge__header__name">{{ cryptoBadge?.name }}</p>
+    </div>
+    <div class="crypto-badge__statistic">
+        <p class="crypto-badge__statistic__amount">{{ cryptoBadge?.price }}</p>
+        <div class="crypto-badge__statistic__percent percent-block">
+            <img class="percent-block__indication"
+                 [src]="indicationPath"
+                 [alt]="cryptoBadge?.indication === cryptoIndication.GROWTH ? '↑' : '↓'">
+            <p class="percent-block__value"
+               [class.percent-block__value--growth]="cryptoBadge?.indication === cryptoIndication.GROWTH"
+               [class.percent-block__value--fall]="cryptoBadge?.indication === cryptoIndication.FALL"
+            >{{ cryptoBadge?.percent }}</p>
+        </div>
+    </div>
+</div>

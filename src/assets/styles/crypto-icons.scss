@@ -1,0 +1,30 @@
+.common-crypto-icon-rules {
+    width: 33px;
+    height: 33px;
+    background-size: contain;
+}
+
+.crypto-icon-btc {
+    @extend .common-crypto-icon-rules;
+    background: url("~assets/img/crypto-logos/btc.png") no-repeat center center;
+}
+
+.crypto-icon-eth {
+    @extend .common-crypto-icon-rules;
+    background: url("~assets/img/crypto-logos/eth.png") no-repeat center center;
+}
+
+.crypto-icon-xrp {
+    @extend .common-crypto-icon-rules;
+    background: url("~assets/img/crypto-logos/xrp.png") no-repeat center center;
+}
+
+.crypto-icon-ltc {
+    @extend .common-crypto-icon-rules;
+    background: url("~assets/img/crypto-logos/ltc.png") no-repeat center center;
+}
+
+.crypto-icon-bch {
+    @extend .common-crypto-icon-rules;
+    background: url("~assets/img/crypto-logos/bch.png") no-repeat center center;
+}
