@@ -1,4 +1,9 @@
+@import "assets/styles/bootstrap.scss";
+@import "assets/fonts/bebas-neue-pro/bebas-neue-pro.scss";
+@import "assets/fonts/roboto/roboto.scss";
+
 body {
+    background: #201D27;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -7,11 +12,15 @@ body {
     font-size: 14px;
 }
 
-body, nav, ul, li, p {
+body, nav, ul, li, p, h1 {
     margin: 0;
     padding: 0;
 }
 
 ul {
     list-style: none;
+}
+
+a {
+    color: #fff;
 }

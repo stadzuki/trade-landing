@@ -1,0 +1,13 @@
+@import "vars";
+
+@mixin xm-text($font-size: $default-font-size,
+               $font-weight: $default-font-weight,
+               $font-family: $default-font-family,
+               $line-height: $default-line-height,
+               $letter-spacing: $default-letter-spacing) {
+    font-family: $font-family;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+}

@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 100;
+    src:
+        local(''),
+        url('./Bebas Neue Pro Thin.otf') format('otf');
+}
+
+@font-face {
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 300;
+    src:
+        local(''),
+        url('./Bebas Neue Pro Light.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    src:
+        local(''),
+        url('./Bebas Neue Pro Regular.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 500;
+    src:
+        local(''),
+        url('./Bebas Neue Pro Medium.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 700;
+    src:
+        local(''),
+        url('./Bebas Neue Pro Bold.otf') format('truetype');
+}
