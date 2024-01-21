@@ -6,11 +6,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MainComponent } from '@app/@views/main/main.component';
 import { CryptoBadgeComponent } from '@app/@standalone/crypto-badge/crypto-badge.component';
 import { CryptoListModule } from '@app/@views/crypto-list/crypto-list.module';
+import { TradeComponent } from '@app/@views/trade/trade.component';
 
 const STANDALONE_COMPONENTS = [
     HeaderComponent,
     MainComponent,
     CryptoBadgeComponent,
+    TradeComponent
 ];
 
 @NgModule({
