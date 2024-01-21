@@ -15,7 +15,7 @@
         opacity: 0.3;
         width: 100%;
         height: 100%;
-        background: url("~assets/img/main-background.png") no-repeat center top;
+        background: url("../../../assets/img/main-background.png") no-repeat center top;
         background-size: contain;
     }
 
@@ -104,7 +104,7 @@
         height: 500px;
 
         &__bg-img {
-            background: url("~assets/img/main-background-tablet.png") no-repeat center top;
+            background: url("../../../assets/img/main-background-tablet.png") no-repeat center top;
             background-size: cover;
         }
     }
@@ -150,7 +150,7 @@
         height: 615px;
 
         &__bg-img {
-            background: url("~assets/img/main-background-mobile.png") no-repeat center top;
+            background: url("../../../assets/img/main-background-mobile.png") no-repeat center top;
             background-size: 26em;
         }
     }

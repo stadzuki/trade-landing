@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { CryptoListService } from '@app/@shared/crypto-list/services/crypto-list-service.service';
+import { CryptoListService } from '@app/@views/crypto-list/services/crypto-list-service.service';
 import { ICryptoBadge } from '@core/crypto/interfaces/crypto-badge';
 import { first } from 'rxjs';
 

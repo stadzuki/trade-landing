@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from '@app/@standalone/header/header.component';
+import { HeaderComponent } from '@app/@views/header/header.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { MainComponent } from '@app/@standalone/main/main.component';
+import { MainComponent } from '@app/@views/main/main.component';
 import { CryptoBadgeComponent } from '@app/@standalone/crypto-badge/crypto-badge.component';
-import { CryptoListModule } from '@app/@shared/crypto-list/crypto-list.module';
+import { CryptoListModule } from '@app/@views/crypto-list/crypto-list.module';
 
 const STANDALONE_COMPONENTS = [
     HeaderComponent,
