@@ -1,0 +1,5 @@
+<div class="crypto-list" *ngIf="cryptos">
+    <ng-container *ngFor="let crypto of cryptos">
+        <xm-crypto-badge [cryptoBadge]="crypto"></xm-crypto-badge>
+    </ng-container>
+</div>
