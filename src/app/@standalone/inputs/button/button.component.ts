@@ -9,6 +9,6 @@ import { ButtonTheme } from '@app/@standalone/inputs/button/button-theme';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ButtonComponent {
-    @Input() theme: ButtonTheme = ButtonTheme.REGULAR;
-    @Input() fontSize: string = '24px';
+    @Input() public theme: ButtonTheme = ButtonTheme.REGULAR;
+    @Input() public fontSize: string = '24px';
 }
