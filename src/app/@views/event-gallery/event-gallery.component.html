@@ -1,0 +1,19 @@
+<div class="gallery">
+    <h2>Event Gallery</h2>
+    <div class="gallery__block centrify-element">
+        <div *ngIf="!scrollLeftDisable"
+             class="gallery__block__controller gallery__block__controller__left"
+             (click)="onClick('left')">
+            <img src="assets/img/arrow-left.svg" alt="<">
+        </div>
+        <div *ngIf="!scrollRightDisable"
+             class="gallery__block__controller gallery__block__controller__right"
+             (click)="onClick('right')">
+            <img src="assets/img/arrow-right.svg" alt=">">
+        </div>
+        <div #galleryList class="gallery__block__gallery-items gallery-items">
+            <div *ngFor="let item of displayedItems;"
+                 class="gallery-items__item"></div>
+        </div>
+    </div>
+</div>

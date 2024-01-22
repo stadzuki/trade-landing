@@ -1,0 +1,97 @@
+@import "assets/styles/colors";
+@import "assets/styles/mixins";
+
+.gallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 390px;
+    background-color: $bg-color-gray;
+
+    &__title {
+        @include xm-text(30px, $font-weight-extra, $default-font-family, 39px, 0px);
+    }
+
+    &__block {
+        position: relative;
+        margin-top: 40px;
+        width: 100%;
+
+        &__controller {
+            position: absolute;
+            width: 16px;
+            height: 26px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.8;
+            }
+
+            &__left {
+                @extend .gallery__block__controller;
+                left: 30px;
+            }
+
+            &__right {
+                @extend .gallery__block__controller;
+                right: 30px;
+            }
+        }
+    }
+}
+
+.gallery-items {
+    display: flex;
+    overflow: hidden;
+    gap: 30px;
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 164px;
+        height: 164px;
+        background-color: $bg-box-gallery;
+    }
+}
+
+@media screen and (max-width: 1070px) {
+    .gallery-items {
+        max-width: 610px;
+
+        &__item {
+            min-width: 130px;
+            height: 130px;
+        }
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .gallery-items {
+        max-width: 450px;
+    }
+}
+
+@media screen and (max-width: 565px) {
+    .gallery-items {
+        gap: 25px;
+        max-width: 225px;
+
+        &__item {
+            min-width: 100px;
+            height: 100px;
+        }
+    }
+
+    .gallery__block__controller__left {
+        left: 16px;
+    }
+
+    .gallery__block__controller__right {
+        right: 16px;
+    }
+}

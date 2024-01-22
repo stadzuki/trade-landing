@@ -7,12 +7,14 @@ import { MainComponent } from '@app/@views/main/main.component';
 import { CryptoBadgeComponent } from '@app/@standalone/crypto-badge/crypto-badge.component';
 import { CryptoListModule } from '@app/@views/crypto-list/crypto-list.module';
 import { TradeComponent } from '@app/@views/trade/trade.component';
+import { EventGalleryComponent } from '@app/@views/event-gallery/event-gallery.component';
 
 const STANDALONE_COMPONENTS = [
     HeaderComponent,
     MainComponent,
     CryptoBadgeComponent,
-    TradeComponent
+    TradeComponent,
+    EventGalleryComponent,
 ];
 
 @NgModule({
