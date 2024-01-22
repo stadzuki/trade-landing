@@ -1,0 +1,57 @@
+@import "assets/styles/colors";
+@import "assets/styles/mixins";
+@import "assets/styles/vars";
+
+
+.footer {
+    padding: 11px 30px 63px;
+    background: $bg-color-black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__links {
+        display: flex;
+    }
+
+    &__link {
+        padding-left: 5px;
+        white-space: nowrap;
+        padding-right: 5px;
+        border-right: 1px solid $text-color-x-light-gray;
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:last-child {
+            border: none;
+            padding-right: 0;
+        }
+
+        & > a {
+            @include xm-text(12px, $font-weight-regular, $default-font-family, 17px, 0px);
+            text-decoration: none;
+            color: $text-color-x-light-gray;
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .footer {
+        padding-top: 52px;
+        padding-bottom: 52px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .footer {
+        flex-direction: column;
+        padding-top: 62px;
+        padding-bottom: 62px;
+
+        &__logo {
+            margin-top: 24px;
+        }
+    }
+}
