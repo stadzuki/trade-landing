@@ -3,6 +3,7 @@
 
 .trade {
     padding: 0 92px;
+    margin-bottom: 70px;
 
     &__text-content {
         display: flex;
@@ -145,6 +146,7 @@
             grid-template-rows: repeat(4, 1fr);
             grid-column-gap: 0px;
             grid-row-gap: 25px;
+            height: auto;
         }
 
         &__block {
