@@ -1,0 +1,234 @@
+@import "assets/styles/colors";
+@import "assets/styles/mixins";
+
+.big-fair-human {
+    background: $bg-color-white;
+    padding: 92px 99px 89px 55px;
+    display: flex;
+    justify-content: space-between;
+    color: $text-color-gray;
+
+    &__main {
+        max-width: 283px;
+
+        &__delimer {
+            width: 72.275px;
+            height: 4px;
+            background: #D51820;
+        }
+
+        &__label {
+            @include xm-text(80px, $font-weight-extra, $default-font-family, 90px, -1.6px);
+            margin-top: 40px;
+
+            & > p > span {
+                color: $text-color-red;
+            }
+        }
+
+        &__description {
+            @include xm-text(17px, $font-weight-regular, $default-font-family, 24px);
+            margin-top: 55px;
+            max-width: 209px;
+
+            & > b {
+                @include xm-text(17px, $font-weight-bold, $default-font-family, 24px);
+            }
+        }
+    }
+
+    &__blocks {
+        position: relative;
+        max-width: 652px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__block {
+        margin-left: 160px;
+        margin-bottom: 85px;
+
+        &__title {
+            @include xm-text(19px, $font-weight-bold, $default-font-family, 24px);
+            margin-top: 20px;
+            max-width: 268px;
+        }
+
+        &__description {
+            @include xm-text(14px, $font-weight-regular, $default-font-family, 21px);
+            margin-top: 17px;
+            max-width: 246px;
+        }
+
+        &:nth-child(3), &:nth-child(4) {
+            margin-bottom: 0;
+        }
+
+        &:nth-child(odd) {
+            margin-left: 0;
+        }
+
+        &__delimer-one {
+            position: absolute;
+            width: 1px;
+            height: 234px;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background: #EBEBEB;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 508px;
+                position: absolute;
+                left: -254px;
+                right: 0;
+                bottom: 0;
+                top: 0;
+                margin: auto;
+                height: 1px;
+                background: #EBEBEB;
+            }
+        }
+
+        &__delimer-two {
+            width: 23px;
+            display: block;
+            height: 1px;
+            z-index: 1;
+            background: #CDCDCD;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+
+            &::before {
+                content: '';
+                width: 1px;
+                display: block;
+                height: 23px;
+                z-index: 1;
+                background: #CDCDCD;
+                position: absolute;
+                top: 0;
+                left: 11.5px;
+                bottom: 0;
+                margin: auto;
+            }
+
+            &::after {
+                content: '';
+                width: 3px;
+                height: 3px;
+                display: block;
+                background: #D51820;
+                z-index: 2;
+                left: 10px;
+                top: -1.5px;
+                position: absolute;
+                border-radius: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1120px) {
+    .big-fair-human {
+        padding: 57px 0px 77px 0px;
+        flex-direction: column;
+        align-items: center;
+
+        &__main {
+            max-width: 521px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &__label {
+                @include xm-text(36px, $font-weight-extra, $default-font-family, 48px, -0.8px);
+                display: flex;
+                margin-top: 25px;
+                gap: 10px;
+            }
+
+            &__description {
+                @include xm-text(16px, $font-weight-regular, $default-font-family, 33px);
+                max-width: 521px;
+                margin-top: 24px;
+
+                & > b {
+                    @include xm-text(16px, $font-weight-bold, $default-font-family, 33px);
+                }
+            }
+        }
+
+        &__blocks {
+            margin-top: 53px;
+            max-width: 571px;
+        }
+
+        &__block {
+            margin-left: 127px;
+            margin-bottom: 58px;
+
+            &__description {
+                max-width: 222px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .big-fair-human {
+        padding-bottom: 70px;
+
+        &__main {
+            max-width: 279px;
+
+            &__label {
+                margin-top: 22px;
+            }
+
+            &__description {
+                @include xm-text(14px, $font-weight-regular, $default-font-family, 21px, 0);
+                text-align: center;
+                margin-top: 24px;
+
+                & > b {
+                    @include xm-text(14px, $font-weight-bold, $default-font-family, 21px, 0);
+                }
+            }
+        }
+
+        &__blocks {
+            margin-top: 65px;
+            flex-direction: column;
+        }
+
+        &__block {
+            margin-bottom: 47px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 0;
+            margin-right: 0;
+
+            &__delimer-one, &__delimer-two  {
+                display: none;
+            }
+
+            &__title, &__description {
+                text-align: center;
+            }
+
+            &:nth-child(3) {
+                margin-bottom: 47px;
+            }
+        }
+    }
+}

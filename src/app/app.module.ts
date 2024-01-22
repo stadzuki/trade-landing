@@ -8,6 +8,7 @@ import { CryptoBadgeComponent } from '@app/@standalone/crypto-badge/crypto-badge
 import { CryptoListModule } from '@app/@views/crypto-list/crypto-list.module';
 import { TradeComponent } from '@app/@views/trade/trade.component';
 import { EventGalleryComponent } from '@app/@views/event-gallery/event-gallery.component';
+import { BigFairHumanComponent } from '@app/@views/big-fair-human/big-fair-human.component';
 
 const STANDALONE_COMPONENTS = [
     HeaderComponent,
@@ -15,6 +16,7 @@ const STANDALONE_COMPONENTS = [
     CryptoBadgeComponent,
     TradeComponent,
     EventGalleryComponent,
+    BigFairHumanComponent,
 ];
 
 @NgModule({
