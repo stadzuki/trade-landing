@@ -25,7 +25,7 @@ export class CryptoListService {
                         symbol: crypto.symbol,
                         name: crypto.name,
                         price: `$${addCommasToNumber(crypto.price_usd)}`,
-                        percent: `${crypto.percent_change_24h}%`,
+                        percent: `${crypto.percent_change_24h.replace('-', '')}%`,
                         indication: crypto.percent_change_24h.includes('-') ? CryptoIndication.FALL : CryptoIndication.GROWTH,
                     }
                 }))
