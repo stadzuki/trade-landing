@@ -11,12 +11,14 @@ import { EventGalleryComponent } from '@app/@views/event-gallery/event-gallery.c
 import { BigFairHumanComponent } from '@app/@views/big-fair-human/big-fair-human.component';
 import { SocialsComponent } from '@app/@views/socials/socials.component';
 import { FooterComponent } from '@app/@views/footer/footer.component';
+import { RegistrationComponent } from '@app/@views/registration/registration.component';
 
 const STANDALONE_COMPONENTS = [
     HeaderComponent,
     MainComponent,
     CryptoBadgeComponent,
     TradeComponent,
+    RegistrationComponent,
     EventGalleryComponent,
     BigFairHumanComponent,
     SocialsComponent,

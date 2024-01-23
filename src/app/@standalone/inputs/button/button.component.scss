@@ -3,6 +3,7 @@
 @import "assets/styles/vars";
 
 .xm__button {
+    cursor: pointer;
     border: none;
     max-width: 345px;
     width: 100%;
@@ -12,6 +13,10 @@
         @include xm-text(24px, $font-weight-bold, $font-bebas, 27px);
         background: $bg-button-regular;
         color: $text-color-white;
+    }
+
+    &.disabled {
+        background: #CCC;
     }
 }
 

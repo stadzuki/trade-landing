@@ -1,0 +1,29 @@
+@import "assets/styles/colors";
+@import "assets/styles/mixins";
+@import "assets/styles/vars";
+
+input {
+    @include xm-text(14px, $font-weight-regular, $default-font-family, 16px, 0px);
+    border: none;
+    height: 40px;
+    padding-left: 8px;
+    color: $text-color-black;
+
+    &.ng-invalid.ng-touched {
+        border: 1px solid #D51820;
+    }
+
+    &.ng-valid.ng-touched {
+        border: 1px solid #29A643;
+    }
+
+    &:focus {
+        border: none;
+        outline: none;
+    }
+
+    &::placeholder {
+        @include xm-text(14px, $font-weight-regular, $default-font-family, 16px, 0px);
+        color: #B1B1B1;
+    }
+}

@@ -11,4 +11,5 @@ import { ButtonTheme } from '@app/@standalone/inputs/button/button-theme';
 export class ButtonComponent {
     @Input() public theme: ButtonTheme = ButtonTheme.REGULAR;
     @Input() public fontSize: string = '24px';
+    @Input() public disabled: boolean = false;
 }
