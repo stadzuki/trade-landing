@@ -1,0 +1,8 @@
+<div class="form-stepper">
+    <div class="form-stepper__meta">
+        <div class="form-stepper__meta__step"
+             [class.active]="isActiveOrCompleted">{{ stepMeta?.stepNumber }}</div>
+        <div class="form-stepper__meta__title">{{ stepMeta?.label }}</div>
+    </div>
+    <progress [value]="progressValue" max="100"></progress>
+</div>

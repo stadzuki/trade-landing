@@ -1,0 +1,110 @@
+<div class="registration" *ngIf="currentStep !== COMPLETE_STEP">
+    <div class="registration__header">
+        <h3 class="registration__header__title">- Register Here -</h3>
+        <p class="registration__header__description">Join us to celebrate our biggest night of the year.</p>
+        <div class="registration__header__info-blocks">
+            <div class="registration__header__info-block">
+                <img src="assets/img/calendar.svg" alt="Date">
+                <p>12 November 2022</p>
+            </div>
+            <div class="registration__header__info-block">
+                <img src="assets/img/time.svg" alt="Time">
+                <p>16:00 - 23:00</p>
+            </div>
+            <div class="registration__header__info-block">
+                <img src="assets/img/geo.svg" alt="Place">
+                <p>Centara Grand & Bangkok Convention Centre, Bangkok</p>
+            </div>
+        </div>
+    </div>
+    <div class="registration__form-stepper">
+        <ng-container *ngFor="let step of steps">
+            <xm-form-step-progress [class.active-step]="step.stepNumber === currentStep" [stepMeta]="step" [isActive]="step.stepNumber === currentStep"></xm-form-step-progress>
+        </ng-container>
+    </div>
+    <form class="registration__form" [formGroup]="form">
+        <fieldset *ngIf="currentStep === FIRST_STEP" class="registration__form__fieldset fieldset">
+            <div class="fieldset__field">
+                <label for="name">Full Name:</label>
+                <input id="name" formControlName="name" placeholder="Full Name">
+                <p *ngIf="form.controls['name'].invalid && form.controls['name'].touched"
+                   class="fieldset__field__error">Please Enter Valid Name</p>
+            </div>
+            <div class="fieldset__field">
+                <label for="birthday">Date of Birth:</label>
+                <input id="birthday"
+                       matInput
+                       placeholder="dd/mm/yyyy"
+                       formControlName="birthday"
+                       autocomplete="off"
+                       [matDatepicker]="picker"
+                       (click)="picker.open()">
+                <mat-datepicker #picker></mat-datepicker>
+                <p *ngIf="form.controls['birthday'].invalid && form.controls['birthday'].touched && form.controls['birthday'].dirty"
+                   class="fieldset__field__error">{{ form.controls['birthday']?.errors?.['errorString'] }}</p>
+            </div>
+        </fieldset>
+        <fieldset *ngIf="currentStep === SECOND_STEP" class="registration__form__fieldset fieldset">
+            <div class="fieldset__field">
+                <label for="email">Email:</label>
+                <input id="email" formControlName="email" placeholder="email@email.com">
+                <p *ngIf="form.controls['email'].invalid && form.controls['email'].touched"
+                   class="fieldset__field__error">Please Enter Valid Email</p>
+            </div>
+            <div class="fieldset__field">
+                <label for="password">Password:</label>
+                <input id="password"
+                       placeholder="Password"
+                       formControlName="password"
+                       autocomplete="off">
+                <ul>
+                    <li class="fieldset__field__error"
+                        [class.untouched]="form.controls['password'].untouched && !form.controls['password'].dirty"
+                        [class.passed]="passwordValidation?.isLengthCorrect">8 - 15 characters</li>
+                    <li class="fieldset__field__error"
+                        [class.untouched]="form.controls['password'].untouched && !form.controls['password'].dirty"
+                        [class.passed]="passwordValidation?.includeNumber">1 or more numbers</li>
+                    <li class="fieldset__field__error"
+                        [class.untouched]="form.controls['password'].untouched && !form.controls['password'].dirty"
+                        [class.passed]="passwordValidation?.includeLowerCase">1 or more lower case letters</li>
+                    <li class="fieldset__field__error"
+                        [class.untouched]="form.controls['password'].untouched && !form.controls['password'].dirty"
+                        [class.passed]="passwordValidation?.includeUpperCase">1 or more upper case letters</li>
+                    <li class="fieldset__field__error"
+                        [class.untouched]="form.controls['password'].untouched && !form.controls['password'].dirty"
+                        [class.passed]="passwordValidation?.includeSymbol">1 or more special characters (#[]()@$&*!?|,.^/\+_-)</li>
+                </ul>
+            </div>
+        </fieldset>
+        <div class="registration__form__button-wrapper">
+            <xm-button *ngIf="currentStep === FIRST_STEP"
+                       [disabled]="form.controls['name'].invalid || form.controls['birthday'].invalid"
+                       (click)="nextStep()">
+                CONTINUE
+            </xm-button>
+            <xm-button *ngIf="currentStep === SECOND_STEP"
+                       [disabled]="form.invalid"
+                       (click)="register()">
+                REGISTER NOW
+            </xm-button>
+        </div>
+    </form>
+    <div class="registration__text-block">
+        <p class="registration__text-block__text registration__text-block__new-account">
+            Don’t have an account? <span class="registration__text-block__text--highlight">Create one here</span> and register for the event
+        </p>
+        <p class="registration__text-block__text registration__text-block__terms">
+            Terms and Conditions apply<span class="noty">*</span>. To read the full T&Cs, click <a class="registration__text-block__text--highlight" href="">here</a>.
+        </p>
+    </div>
+</div>
+
+<div *ngIf="currentStep === COMPLETE_STEP" class="registration">
+    <div class="registration__success">
+        <div class="registration__success__title">
+            <img src="assets/img/success.svg" alt="✓">
+            <p>Registration Successful</p>
+        </div>
+        <div  class="registration__success__text">Thank you for registering for our event with XM. You will receive an email shortly with confirmation of your registration.</div>
+    </div>
+</div>

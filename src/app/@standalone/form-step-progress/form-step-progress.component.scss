@@ -1,0 +1,78 @@
+@import "assets/styles/colors";
+@import "assets/styles/mixins";
+@import "assets/styles/vars";
+
+.form-stepper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &__meta {
+        @include xm-text(14px, $font-weight-bold, $default-font-family, 14px, 0px);
+        color: $text-color-xx-light-gray;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+
+        &__step {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #CCCCCC;
+            color: $text-color-white;
+            width: 26px;
+            height: 26px;
+            border-radius: 100%;
+
+            &.active {
+                background: $bg-form-step;
+
+                &::after {
+                    border: 1px solid $bg-form-step;
+                }
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                background: transparent;
+                border: 1px solid #CCCCCC;
+                border-radius: 100%;
+                width: 28px;
+                height: 28px;
+            }
+        }
+    }
+}
+
+:host {
+    flex-grow: 1;
+    max-width: 403px;
+
+    progress {
+        height: 8px;
+    }
+
+    progress[value] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: none;
+        width: 100%;
+        border-radius: 4px;
+        background: $bg-from-step-progress;
+    }
+    progress[value]::-webkit-progress-bar {
+        border-radius: 4px;
+        background: $bg-from-step-progress;
+    }
+    progress[value]::-webkit-progress-value {
+        border-radius: 4px;
+        background: $from-step-progress;
+    }
+    progress[value]::-moz-progress-bar {
+        border-radius: 10em;
+        background: $from-step-progress;
+    }
+}
