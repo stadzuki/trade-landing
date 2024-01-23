@@ -5,10 +5,11 @@
             position: absolute;
             background-size: cover;
             height: 1067px;
-            width: 1210px;
-            right: -270px;
+            width: 100%;
             top: 60%;
             background-image: url("~assets/img/bg-asset-2.png");
+            background-position: 400px;
+            background-repeat: no-repeat;
         }
     }
 }
