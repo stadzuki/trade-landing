@@ -1,0 +1,14 @@
+.xm-app {
+    &__bg-asset {
+        &--2 {
+            z-index: 1;
+            position: absolute;
+            background-size: cover;
+            height: 1067px;
+            width: 1210px;
+            right: -270px;
+            top: 60%;
+            background-image: url("~assets/img/bg-asset-2.png");
+        }
+    }
+}

@@ -4,9 +4,24 @@
 
 .trade {
     padding: 0 92px;
+    position: relative;
     margin-bottom: 70px;
 
+    &__bg-asset {
+        &--1 {
+            height: 726px;
+            width: 590px;
+            z-index: 1;
+            left: -300px;
+            top: -110px;
+            position: absolute;
+            background-image: url("~assets/img/bg-asset-1.png");
+            background-size: cover;
+        }
+    }
+
     &__text-content {
+        z-index: 2;
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -39,6 +54,7 @@
     }
 
     &__blocks {
+        z-index: 2;
         margin-top: 32px;
         height: 570px;
         width: 100%;
